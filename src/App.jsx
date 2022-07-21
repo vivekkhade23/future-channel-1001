@@ -5,6 +5,10 @@ import './App.css'
 
 import Landing from './components/LANDINGPAGES/landing'
 import Production from './components/product/productpage'
+import Loginpage from './components/Login/Login'
+import Address from './components/Address/Address'
+import Checkout from './components/checkout/checkout'
+import Cart from './components/cartpage/Cart'
 
 
 
@@ -13,11 +17,17 @@ function App() {
 
   return (
     <div className="App">
-    <Landing/>
+    {/* <Landing/> */}
 {/* <Production/> */}
-    
+    {/* <Loginpage/> */}
+    {/* <Address/> */}
+    <Checkout/>
+
+
+{/* <Cart/> */}
+
     </div>
   )
 }
 
-export default App
+export default App;

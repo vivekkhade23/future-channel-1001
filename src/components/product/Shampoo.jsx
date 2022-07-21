@@ -1,9 +1,12 @@
 import ShampooCard from "./shampooCard";
 import "../LANDINGPAGES/slide.css"
 import { HStack, VStack } from "@chakra-ui/react";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Shanmpoo(){
 
+   
 
     return (
         <VStack>
