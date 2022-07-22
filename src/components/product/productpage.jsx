@@ -1,4 +1,5 @@
 import { Box } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import Dropper from "../LANDINGPAGES/dropper";
 import Footer from "../LANDINGPAGES/footer";
 import Top from "../LANDINGPAGES/navTop";
@@ -7,7 +8,7 @@ import Header from "./header";
 import Shanmpoo from "./Shampoo";
 
 function Production (){
-
+        const navigate=useNavigate()
     return (
         <Box>
         <Top/>

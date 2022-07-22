@@ -11,9 +11,14 @@ import {
     HStack,
     VStack,
 } from "@chakra-ui/react"
+import { useNavigate } from "react-router-dom"
 // import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
  function Dropper() {
+
+
+
+    const navigate=useNavigate()
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <Menu  isOpen={isOpen}>
@@ -75,7 +80,7 @@ import {
              Hair Care
             </MenuButton>
             <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-                <MenuItem>shampoo</MenuItem>
+                <MenuItem onClick={()=> navigate("/product")}>shampoo</MenuItem>
                 <MenuItem>conditioner</MenuItem>
                 <MenuItem>Oil</MenuItem>
                 <MenuItem>serum</MenuItem>

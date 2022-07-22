@@ -1,5 +1,6 @@
 import { Box, Button, Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Head from "../Address/head";
 
 
@@ -9,7 +10,7 @@ function Cart(){
     let data=JSON.parse(localStorage.getItem("cart"));
     console.log(data);
   
-
+    const navigate=useNavigate()
 
     let sum=0;
     for(let i=0;i<data.length;i++){
@@ -52,7 +53,7 @@ function Cart(){
  </Box>
 
    
-    <Button w={"500px"} color="white" bg="black" mt={"45px"} ml="225px" >
+    <Button onClick={()=> navigate("/address")}  w={"500px"} color="white" bg="black" mt={"45px"} ml="225px" >
         PROCEED TO CHECKOUT
     </Button>
    

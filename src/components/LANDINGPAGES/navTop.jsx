@@ -2,8 +2,9 @@ import {  Flex,  HStack, VStack } from "@chakra-ui/react"
 import { Image, Text, InputLeftElement, Input, InputGroup } from '@chakra-ui/react'
 import { Icon, SearchIcon } from "@chakra-ui/icons"
 import { BsFillBagFill, BsFillPersonFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 function Top() {
-
+    const navigate=useNavigate();
     return (
         <VStack>
             <Flex h="50px" w="1500px" bg="#fee8e8" p="2rem" justifyContent="space-between">
@@ -36,8 +37,8 @@ function Top() {
                     </InputGroup>
                 </Flex>
                 <Flex gap={"40px"}>
-                    <Icon as={BsFillBagFill} w={6} h={6} />
-                    <Icon as={BsFillPersonFill} w={6} h={6} />
+                    <Icon onClick={()=> navigate("/cart")} as={BsFillBagFill} w={6} h={6} />
+                    <Icon onClick={()=> navigate("/login")} as={BsFillPersonFill} w={6} h={6} />
                 </Flex>
 
             </HStack>

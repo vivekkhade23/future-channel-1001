@@ -32,6 +32,7 @@ function Shanmpoo(){
 <ShampooCard body={"Anti-Dandruff & Moisturising Hair Cleanser"} head={"MyGlamm SUPERFOODS Cacao, Coconut & Coffee Shampoo with SUPERFOODS Pouch"} cutprice={464} price={324} src={"https://files.myglamm.com/site-images/800x800/SMP-(1).jpg"}/>
 
 </HStack>
+
  </VStack>
         <hr style={{width:"1500px"}}/>    </VStack>
         

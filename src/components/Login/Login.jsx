@@ -10,8 +10,11 @@ import {
     // Select,
     // option
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 function Loginpage() {
+    const navigate=useNavigate()
+
     return (
         <Box>
             <VStack>
@@ -34,7 +37,7 @@ function Loginpage() {
                     <Input borderRadius={"none"}></Input>
                     </Box>
                 </HStack>
-                <Button bg="black" color={"white"}>CONTINUE</Button>
+                <Button onClick={()=> navigate("/")} bg="black" color={"white"}>CONTINUE</Button>
                 <Text>By Signing up you agree to our Terms & Conditions</Text>
             </VStack>
         </Box>

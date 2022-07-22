@@ -2,7 +2,11 @@ import { Box, Button, Heading, HStack, Icon, Image, Input, InputGroup, InputRigh
 import Head from "../Address/head";
 import { MdAgriculture, MdDescription, MdMailOutline, MdSettingsPhone } from "react-icons/md";
 import Footer from "../LANDINGPAGES/footer";
+import { useNavigate } from "react-router-dom";
 function Checkout() {
+    const navigate=useNavigate()
+
+
 
 let user=JSON.parse(localStorage.getItem("user"))
 console.log(user)
@@ -107,7 +111,7 @@ console.log(user.name)
                                 <Text>You will earn</Text>
                                 <Text>₹0.00</Text>
                             </HStack>
-                            <Button w={"100%"} color={"white"} bg={"black"}>PROCEED TO PAYMENT</Button>
+                            <Button onClick={()=> navigate("/payment")} w={"100%"} color={"white"} bg={"black"}>PROCEED TO PAYMENT</Button>
                         </Box>
                     </VStack>
                 </HStack>

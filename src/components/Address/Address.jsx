@@ -1,5 +1,6 @@
-import { Box, Button, HStack, Input, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, HStack, Input, Link, Text, VStack } from "@chakra-ui/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../LANDINGPAGES/footer";
 import Head from "./head";
 
@@ -13,6 +14,8 @@ function Address() {
   const[pincode,setpincode]=useState("")
   const[city,setcity]=useState("")
   const[state,setstate]=useState("")
+
+  const navigate=useNavigate()
   
   const handleSubmit=(e)=>{
     e.preventDefault();
@@ -69,8 +72,8 @@ function Address() {
         </Box>
         </form>
         <HStack alignSelf={"flex-end"} >
-          <Button color={"white"} bg="black">Back</Button>
-          <Button color={"white"} bg="black">Continue</Button>
+         <Button onClick={()=> navigate("/cart")} color={"white"} bg="black">Back</Button>    
+          <Button onClick={()=> navigate("/checkout")}  color={"white"} bg="black">Continue</Button>
         </HStack>
       </VStack>
      
