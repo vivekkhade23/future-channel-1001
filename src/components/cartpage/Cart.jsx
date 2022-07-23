@@ -18,8 +18,13 @@ function Cart(){
         sum=sum+ Number(data[i].price);
        
     }
-  console.log(sum)
- 
+
+
+
+let total=  JSON.parse(localStorage.getItem("sum"))||[];
+total.push(sum)
+localStorage.setItem("sum",JSON.stringify(total))
+console.log(total[total.length-1]);
 
     return(
 <Box>

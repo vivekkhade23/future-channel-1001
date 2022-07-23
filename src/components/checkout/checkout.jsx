@@ -5,12 +5,14 @@ import Footer from "../LANDINGPAGES/footer";
 import { useNavigate } from "react-router-dom";
 function Checkout() {
     const navigate=useNavigate()
-
-
+let data=JSON.parse(localStorage.getItem("cart"))
+console.log("cart:",data)
+let total=JSON.parse(localStorage.getItem("sum"))
+let sum=total[total.length-1];
 
 let user=JSON.parse(localStorage.getItem("user"))
-console.log(user)
-console.log(user.name)
+console.log(user[user.length-1])
+console.log(user[user.length-1].name)
     return (
         <Box>
             <VStack boxShadow={"rgba(17, 17, 26, 0.1) 0px 1px 0px"} mb="50px">
@@ -23,16 +25,16 @@ console.log(user.name)
                         </Box>
                        
                         <hr />
-                        <Text alignSelf={"start"} textAlign={"start"}>{user[0].name}</Text>
-                        <Text alignSelf={"start"}>{user[0].street}<br/>{user[0].house}<br/>{user[0].city}</Text>
+                        <Text alignSelf={"start"} textAlign={"start"}>{user[user.length-1].name}</Text>
+                        <Text alignSelf={"start"}>{user[user.length-1].street}<br/>{user[user.length-1].house}<br/>{user[user.length-1].city}</Text>
                         <br />
                         <HStack alignSelf={"start"}>
                             <Icon as={MdSettingsPhone} />
-                            <Text>{user[0].number}</Text>
+                            <Text>{user[user.length-1].number}</Text>
                         </HStack>
                         <HStack alignSelf={"start"}>
                             <Icon as={MdMailOutline} />
-                            <Text>{user[0].email}</Text>
+                            <Text>{user[user.length-1].email}</Text>
                         </HStack>
                         <Button alignSelf={"start"} borderRadius={"none"} w="150px" color={"white"} bg="black">Change</Button>
 
@@ -51,12 +53,16 @@ console.log(user.name)
                         <Text lineHeight={5} alignSelf={"start"}>YOUR ORDER</Text>
                         <hr />
                         <HStack alignSelf={"start"}>
-                            <Image src="fhvbj" alt="order image" />
-                            <Text>Manish Malhotra cinnamon
-                                Ginger Night Gel
-                            </Text>
-                            <Text>1</Text>
-                            <Text>₹708</Text>
+                        { data.map(function(el){
+    return(
+        <VStack justifyContent={"space-between"}>       
+    <Image w={"96px"} h="96px" m={10} key={el.index} src={el.image} alt="image"/>,
+    <Text fontSize={17} fontWeight={500} maxWidth={"235px"} key={el.index}>{el.name}</Text>,
+    <Text fontSize={17} fontWeight={500} key={el.index}> ₹ {el.price}</Text>,
+</VStack>
+
+    )
+})}
                         </HStack>
 
 
@@ -64,15 +70,15 @@ console.log(user.name)
 
                     </VStack>
                     <VStack gap={10}  >
-                        <Box mt="-70px" bg="gray.100" p={8} gap={10}  >
+                        <Box mt="-350px" bg="gray.100" p={8} gap={10}  >
                             <Text  fontSize={19} mb={"10px"}  textAlign={"left"}  >Order Summary</Text>
                             <HStack mb={"10px"}  justifyContent={"space-between"}>
                                 <Text>MRP</Text>
-                                <Text>₹945.00</Text>
+                                <Text>₹{sum}</Text>
                             </HStack>
                             <HStack mb={"10px"}  justifyContent={"space-between"}>
                                 <Text>Discount On MRP</Text>
-                                <Text>₹237.00</Text>
+                                <Text>₹00.00</Text>
                             </HStack >
                             <Text  mt={"15px"} textAlign={"left"} mb={"10px"} fontSize={15} fontWeight={700}>Apply Promo Code</Text>
                             <InputGroup mb={"29px"}  size='md'>
@@ -101,7 +107,7 @@ console.log(user.name)
                             </HStack>
                             <HStack mb={"15px"} mt={"15px"} fontSize={15} fontWeight={700}  justifyContent={"space-between"}>
                                 <Text>Amount Payable</Text>
-                                <Text>₹708</Text>
+                                <Text>₹{sum}</Text>
                             </HStack>
                             <HStack  mb={"10px"}  justifyContent={"space-between"}>
                                 <Text>You saved</Text>

@@ -9,7 +9,9 @@ function Payment() {
 
     const navigate = useNavigate()
 
-
+let total=JSON.parse(localStorage.getItem("sum"));
+let sum=total[total.length-1];
+console.log(total[total.length-1])
 
 
     return (
@@ -23,23 +25,23 @@ function Payment() {
                         <Icon color={"gray.400"} as={BsCreditCard} />
                         <Text fontWeight={500} fontSize={14}>Credit or Debit Card</Text>
                     </HStack>
-                    <HStack alignSelf={"flex-start"}>
+                    <HStack  onClick={() => navigate("/success")}  alignSelf={"flex-start"}>
                         <Icon color={"gray.400"} as={MdLanguage} />
                         <Text fontWeight={500} fontSize={14}>Net Banking</Text>
                     </HStack>
-                    <HStack alignSelf={"flex-start"}>
+                    <HStack  onClick={() => navigate("/success")}  alignSelf={"flex-start"}>
                         <Icon color={"gray.400"} as={MdOutlinePayment} />
                         <Text fontWeight={500} fontSize={14}>Google Pay/PhonePe/UPI</Text>
                     </HStack>
-                    <HStack alignSelf={"flex-start"}>
+                    <HStack  onClick={() => navigate("/success")}  alignSelf={"flex-start"}>
                         <Icon color={"gray.400"} as={BsWallet2} />
                         <Text fontWeight={500} fontSize={14}>Wallets</Text>
                     </HStack>
-                    <HStack alignSelf={"flex-start"}>
+                    <HStack  onClick={() => navigate("/success")}  alignSelf={"flex-start"}>
                         <Icon color={"gray.400"} as={BsCash} />
                         <Text fontWeight={500} fontSize={14} >Cash On Delivery</Text>
                     </HStack>
-                    <HStack alignSelf={"flex-start"}>
+                    <HStack onClick={() => navigate("/success")} alignSelf={"flex-start"}>
                         <Icon color={"gray.400"} as={BsCashCoin} />
                         <Text fontWeight={500} fontSize={14}>Pay with Rewards</Text>
                     </HStack>
@@ -47,7 +49,7 @@ function Payment() {
                 <VStack maxW={"500px"} gap={7} alignSelf={"flex-start"} textAlign={"start"}>
                     <HStack w="100%" fontWeight={500} fontSize={14} border={"1px solid"} p={3} bg={"#fcf8ed"} justifyContent={"space-between"} alignSelf={"flex-start"}>
                         <Text>AMOUNT PAYABLE</Text>
-                        <Text>₹947.00</Text>
+                        <Text>₹{sum}</Text>
                     </HStack>
                     <Text fontWeight={500} fontSize={14} alignSelf={"flex-start"}>New Card</Text>
                     <HStack alignSelf={"flex-start"} w="100%" fontWeight={500} fontSize={14}>
@@ -73,7 +75,7 @@ function Payment() {
           </HStack>
             <br />
             <br />
-            <Button onClick={() => navigate("/success")} color={"white"} bg={"black"}>Pay ₹ 947.00 </Button>
+            <Button onClick={() => navigate("/success")} color={"white"} bg={"black"}>Pay ₹ {sum} </Button>
         </Box>
     )
 
