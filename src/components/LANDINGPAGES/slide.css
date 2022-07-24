@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -94,3 +95,48 @@ justify-content: center;
    background: linear-gradient(180deg,transparent 60%,#ff9797 30px); 
    font-size: 24px; 
 }
+.slide {
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+  
+  }
+  
+  .image img {
+    width: 1500px;
+    object-fit: fill;
+    height: 390px;
+    
+  }
+  .expand{
+    border: "5px solid";
+  }
+  
+  .arrows {
+    font-size: 3rem;
+  
+    color: white;
+    cursor: pointer;
+  }
+  
+  .left-arrow {
+    position: absolute;
+    top: 176px;
+    left: 10px;
+  }
+  
+  .right-arrow {
+    position: absolute;
+    top: 176px;
+    right: 10px;
+  }
+  .spotlight{
+    margin: auto auto 2.5rem; 
+    font-weight: 600;
+    width: max-content;
+     text-transform: uppercase; 
+     padding: 0px 5px;
+     background: linear-gradient(180deg,transparent 60%,#ff9797 30px); 
+     font-size: 24px; 
+  }
+  
